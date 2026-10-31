@@ -16,6 +16,9 @@ Local validation performed on **October 30, 2026**. These results do not certify
 | Documentation language and local links | README, five guides, source comments | English reviewed; all relative documentation links resolve |
 | `bash -n Scripts/test-ios.sh` | bash | Passed |
 | CI YAML parsing | PyYAML | Passed |
+| Public SPM dependency, exact `0.1.0` | Independent consumer fetched from GitHub and built the tagged package | Both README/testing-guide integration tests passed |
+| Anonymous Git tag lookup | Credential helpers disabled | Public `0.1.0` tag resolves to `8cb38cc68edbe3e637790da119b5e586a17d3f63` |
+| GitHub license detection | Repository license API | MIT recognized |
 | Provider-independence audit | Sources, Examples, and Tests | No provider-specific references or types |
 | Concurrency annotation audit | Sources | No unchecked Sendable, preconcurrency, nonisolated(unsafe), or Task.detached |
 
@@ -29,6 +32,12 @@ The simulator script writes a unique folder per run under `TestResults/` (ignore
 Each folder contains its xcodebuild log and simulator inventory. Xcode emits an App Intents metadata-extraction notice because this package does not depend on App Intents. There were no compiler errors or test failures.
 
 These are machine-local artifacts, not files included in the public package. Regenerate them with the simulator script on your own machine.
+
+## Published package verification
+
+The public repository is [oscast/HTTPKit](https://github.com/oscast/HTTPKit), with release [0.1.0](https://github.com/oscast/HTTPKit/releases/tag/0.1.0). A separate Swift package resolved the exact version from that remote URL rather than using a local path dependency. Its Package.resolved pinned the commit above, and both documentation integration tests passed.
+
+The license is MIT, copyright (c) 2026 Oscar Castillo. GitHub recognizes the license. No provider-specific integration was added. Automatic Actions execution remains pending as described below.
 
 ## Pending or outside this validation
 
