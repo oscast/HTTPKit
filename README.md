@@ -302,4 +302,8 @@ Streaming/SSE, WebSockets, multipart helpers, upload progress, background transf
 
 Initial public version: **0.1.0**. See the [changelog](CHANGELOG.md) and [validation record](Docs/Validation.md) before adoption.
 
-No license has been selected yet. Public visibility is not an open-source license grant; license selection remains with the author.
+## License
+
+Licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Oscar Castillo.

@@ -36,6 +36,6 @@ These are machine-local artifacts, not files included in the public package. Reg
 - Activate the published CI template with a credential authorized to manage GitHub workflows, then run it. The current publishing credential lacks the `workflow` scope; automatic CI is not active. A template is not evidence of a successful run.
 - Physical devices, exact iOS 18.0 availability, real-server TLS/redirects, degraded networks, and a production backend.
 - Thread Sanitizer, measured load/resource usage, and very large payloads. Concurrent tests do not replace those checks.
-- Integration into a real app and license selection. The initial public version is tagged `0.1.0`.
+- Integration into a real app. The initial public version is tagged `0.1.0`.
 
 HTTPKit is a functional foundation verified in the environments listed above—not a promise of every HTTP capability or of safety guarantees for arbitrary external protocol implementations.

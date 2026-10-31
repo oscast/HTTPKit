@@ -67,4 +67,4 @@ HTTPKit is a new package and does not modify an existing app. To adopt it, keep 
 
 ## Evolution
 
-Before a 1.0.0 release, validate integration in a real app, select a license, and review the public API. After 1.0, use major versions for incompatible changes, minor versions for additive capabilities, and patch versions for compatible fixes. Design streaming, file/background transfers, and offline behavior separately when a concrete requirement exists.
+Before a 1.0.0 release, validate integration in a real app and review the public API. The package uses the MIT License. After 1.0, use major versions for incompatible changes, minor versions for additive capabilities, and patch versions for compatible fixes. Design streaming, file/background transfers, and offline behavior separately when a concrete requirement exists.

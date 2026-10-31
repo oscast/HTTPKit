@@ -8,5 +8,6 @@
 - Optional, cancellation-aware replay-safe retries and Retry-After.
 - Privacy-safe observability, deterministic test support and REST examples.
 - Swift 6 package for iOS 18+ / macOS 15+, CI template and simulator test script.
+- MIT License, copyright (c) 2026 Oscar Castillo.
 
-Initial public package release. The CI workflow is provided as a template; activation requires additional GitHub authorization. No license has been selected yet.
+Initial public package release. The CI workflow is provided as a template; activation requires additional GitHub authorization. Released under the MIT License.
