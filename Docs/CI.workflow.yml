@@ -1,0 +1,49 @@
+name: HTTPKit
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  minimum-toolchain:
+    name: Swift 6.0 minimum
+    runs-on: macos-15
+    timeout-minutes: 15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift --version
+      - run: swift test
+
+  ios:
+    name: iOS ${{ matrix.ios }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            xcode: /Applications/Xcode_16.4.app/Contents/Developer
+            ios: '18'
+          - runner: macos-26
+            xcode: /Applications/Xcode_26.4.1.app/Contents/Developer
+            ios: '26'
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    env:
+      DEVELOPER_DIR: ${{ matrix.xcode }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift build -c release
+      - run: bash Scripts/test-ios.sh '${{ matrix.ios }}'
+      - name: Upload simulator results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: HTTPKit-iOS-${{ matrix.ios }}
+          path: TestResults/
+          if-no-files-found: warn
